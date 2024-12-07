@@ -5,18 +5,23 @@ import clsx from "clsx";
 
 import { Providers } from "./providers";
 
+import { Assets } from "@/utils/assets";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: "David Korn | Personal Site",
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: {
+      url: Assets.profileImage,
+      type: "image/png",
+      sizes: "any",
+    },
   },
 };
 
