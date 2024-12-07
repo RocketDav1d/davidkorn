@@ -7,6 +7,7 @@ export class Assets {
   static registercheck = "/assets/registercheck.png";
   static lemon_markets = "/assets/lemon-markets.png";
   static trustyourvc = "/assets/trustyourvc.png";
+  static code = "/assets/code.png";
 
   static getProfileImage() {
     return this.profileImage;

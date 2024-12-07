@@ -12,12 +12,14 @@
 		"@nextui-org/avatar": "^2.2.1",
 		"@nextui-org/button": "2.0.38",
 		"@nextui-org/card": "^2.2.1",
+		"@nextui-org/chip": "^2.2.2",
 		"@nextui-org/code": "2.0.33",
 		"@nextui-org/image": "^2.2.1",
 		"@nextui-org/input": "2.2.5",
 		"@nextui-org/kbd": "2.0.34",
 		"@nextui-org/link": "2.0.35",
 		"@nextui-org/listbox": "2.1.27",
+		"@nextui-org/modal": "^2.2.2",
 		"@nextui-org/navbar": "2.0.37",
 		"@nextui-org/snippet": "2.0.43",
 		"@nextui-org/switch": "2.0.34",
@@ -32,6 +34,7 @@
 		"next": "14.2.4",
 		"next-themes": "^0.2.1",
 		"react": "18.3.1",
+		"react-calendly": "^4.3.1",
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {

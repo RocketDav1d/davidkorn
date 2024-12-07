@@ -1,5 +1,7 @@
-import { Card, CardBody } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
+import { Chip } from "@nextui-org/chip";
+import { Button } from "@nextui-org/button";
 
 interface ExperienceCardProps {
   className: string;
@@ -8,6 +10,9 @@ interface ExperienceCardProps {
   text: string;
   imageSrc: string;
   imageClassName?: string;
+  buttonColor?: string;
+  status: string;
+  link: string; // Added link as a prop
 }
 
 export const ExperienceCard: React.FC<ExperienceCardProps> = ({
@@ -17,22 +22,22 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
   text,
   imageSrc,
   imageClassName = "",
+  buttonColor = "primary",
+  status,
+  link, // Destructured link prop
 }) => {
   return (
     <Card
       isBlurred
-      className={`border-none bg-opacity-60 backdrop-blur-md max-w-[610px] mt-10 ${className}`}
-      shadow="sm"
+      className={`border-none bg-opacity-60 backdrop-blur-md max-w-[610px] mt-10 relative ${className}`}
     >
-      <CardBody>
+      <CardBody className="pb-16">
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-          <div className="relative col-span-6 md:col-span-4">
+          <div className="relative col-span-6 md:col-span-4 aspect-square w-full">
             <Image
               alt="Album cover"
-              className={`object-contain ${imageClassName}`}
-              height={200}
+              className={`object-contain w-[150px] h-[150px] ${imageClassName}`}
               src={imageSrc}
-              width="100%"
             />
           </div>
 
@@ -47,6 +52,25 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
           </div>
         </div>
       </CardBody>
+      <CardFooter className="absolute bottom-0 w-full border-t-1 border-zinc-100/50 z-10 justify-between bg-white/30">
+        <div>
+          <p className="text-black text-tiny">{status}</p>
+        </div>
+        <Button
+          as="a"
+          href={link}
+          target="_blank" // Opens the link in a new window
+          rel="noopener noreferrer" // Security measure for opening new tabs
+          className="text-tiny"
+          color={buttonColor}
+          radius="full"
+          size="sm"
+        >
+          Learn more
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
+
+export default ExperienceCard;

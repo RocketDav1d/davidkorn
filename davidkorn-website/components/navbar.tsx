@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -32,7 +33,16 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex">
-          <Button color="default" variant="bordered">
+          <Button
+            color="default"
+            variant="bordered"
+            onClick={() =>
+              window.open(
+                "https://calendly.com/korn-david/introductory-call",
+                "_blank"
+              )
+            }
+          >
             <Avatar
               src={Assets.profileImage}
               className="w-6 h-6 text-tiny"
