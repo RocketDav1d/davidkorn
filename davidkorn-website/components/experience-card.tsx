@@ -10,7 +10,13 @@ interface ExperienceCardProps {
   text: string;
   imageSrc: string;
   imageClassName?: string;
-  buttonColor?: string;
+  buttonColor?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger";
   status: string;
   link: string; // Added link as a prop
 }
